@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="status_bar_bg_color">#ffffff</color>
+    <color name="toolbar_bg_color">#ffffff</color>
+    <color name="toolbar_div_color">#000000</color>
+    <color name="bg_color">#fcfcfc</color>
+    <color name="div_color">#cac4d0</color>
+    <color name="textview_color">#000000</color>
+    <color name="button_text_color">#ffffff</color>
+    <color name="button_bg_color">#000000</color>
+    <color name="button_ripple_color">#ffffff</color>
+    <color name="edittext_bg_color">#e0e0e0</color>
+</resources>

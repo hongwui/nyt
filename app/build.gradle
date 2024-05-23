@@ -1,0 +1,64 @@
+plugins {
+    alias(libs.plugins.android.application)
+    alias(libs.plugins.jetbrains.kotlin.android)
+}
+
+android {
+    namespace 'com.hongwui.nyt'
+    compileSdk 30
+
+    defaultConfig {
+        applicationId "com.hongwui.nyt"
+        minSdk 26
+        targetSdk 30
+        versionCode 1
+        versionName "1.0"
+
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+        vectorDrawables {
+            useSupportLibrary true
+        }
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+    kotlinOptions {
+        jvmTarget = '1.8'
+    }
+    buildFeatures {
+        viewBinding true
+        buildConfig = true
+    }
+    packaging {
+        resources {
+            excludes += '/META-INF/{AL2.0,LGPL2.1}'
+        }
+    }
+    defaultConfig {
+        buildConfigField "String", "NYT_BASE_URL", '"https://api.nytimes.com/"'
+        buildConfigField "String", "NYT_APP_ID", '"32NGqXZ9W33pzzM4gttMGf1CBGAnYc5y"'
+    }
+}
+
+dependencies {
+    implementation libs.material
+    implementation libs.androidx.app.compat
+    implementation libs.androidx.core.ktx
+    implementation libs.androidx.lifecycle.runtime.ktx
+    implementation libs.navigation.ui
+    implementation libs.navigation.fragment
+    implementation libs.retrofit2
+    implementation libs.retrofit2.gson
+    implementation libs.retrofit2.interceptor
+    testImplementation libs.junit
+    androidTestImplementation libs.androidx.junit
+    androidTestImplementation libs.androidx.espresso.core
+}
